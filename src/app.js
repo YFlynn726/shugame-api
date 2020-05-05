@@ -17,6 +17,7 @@ app.use(cors());
 
 app.use("/api/users", usersRouter);
 app.use("/api/shoes", shoesRouter);
+app.use("/api/wishlist", wishRouter);
 
 app.get("/api/users", usersRouter);
 app.post("/api/users", usersRouter);
@@ -25,6 +26,10 @@ app.get("/api/users/:user_id", usersRouter);
 app.get("/api/shoes", shoesRouter);
 app.post("/api/shoes", shoesRouter);
 app.get("/api/shoes/:shoe_id", shoesRouter);
+
+app.get("/api/wishlist", wishRouter);
+app.post("/api/wishlist", wishRouter);
+app.get("/api/wishlist/:wishlist_id", wishRouter);
 
 // app.get("/api/users", (req, res, next) => {
 //   const knexInstance = req.app.get("db");
