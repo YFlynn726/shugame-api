@@ -6,6 +6,7 @@ const helmet = require("helmet");
 const { NODE_ENV } = require("./config");
 const usersRouter = require("./users/users-router");
 const shoesRouter = require("./shoes/shoes-router");
+const wishRouter = require("./wishlist/wish-router");
 
 const app = express();
 

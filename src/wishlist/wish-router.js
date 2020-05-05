@@ -6,9 +6,9 @@ const WishService = require("./wish-service");
 const wishRouter = express.Router();
 const jsonParser = express.json();
 
-const serializeShoe = (wishlist) => ({
+const serializeWish = (wishlist) => ({
   id: wishlist.id,
-  name: xss(shoe.name),
+  name: xss(wishlist.name),
   user_id: wishlist.user_id,
   order_link: xss(wishlist.order_link),
 });
@@ -61,7 +61,7 @@ wishRouter
       .catch(next);
   })
   .get((req, res, next) => {
-    res.json(serializeWish(res.wish));
+    res.json(serializeWish(res.wishlist));
   })
   .delete((req, res, next) => {
     WishService.deleteWish(req.app.get("db"), req.params.wishlist_id)
