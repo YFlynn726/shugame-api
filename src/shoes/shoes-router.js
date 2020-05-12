@@ -83,7 +83,9 @@ shoesRouter
 
     ShoesService.updateShoe(req.app.get("db"), req.params.shoe_id, shoeToUpdate)
       .then((numRowsAffected) => {
-        res.status(204).end();
+        res.status(201).json({
+          json: numRowsAffected,
+        });
       })
       .catch(next);
   });

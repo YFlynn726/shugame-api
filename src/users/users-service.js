@@ -13,6 +13,10 @@ const UsersService = {
       });
   },
 
+  deleteUser(knex, id) {
+    return knex("users").where({ id }).delete();
+  },
+
   getById(knex, id) {
     return knex.from("users").select("*").where("id", id).first();
   },
