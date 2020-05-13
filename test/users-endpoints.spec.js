@@ -2,42 +2,28 @@ const { expect } = require("chai");
 const knex = require("knex");
 const app = require("../src/app");
 
-describe.only("Users Endpoints", function () {
+describe("Users Endpoints", function () {
   let db;
 
   before("make knex instance", () => {
     db = knex({
       client: "pg",
-      connection: process.env.TEST_DB_URL,
+      connection: process.env.TEST_DATABASE_URL,
     });
     app.set("db", db);
   });
 
-  after("disconnect from db", () => db.destroy());
-
-  before("clean the table", () => db("users").truncate());
-  afterEach("cleanup", () => db("users").truncate());
-
-  context("Given there are articles in the database", () => {
-    const testUsers = [
-      {
-        id: 1,
-        first_name: "Larry",
-        last_name: "Bird",
-      },
-      {
-        id: 2,
-        first_name: "Mike",
-        last_name: "Tyson",
-      },
-    ];
-
-    beforeEach("insert users", () => {
-      return db.into("users").insert(testUsers);
+  context("Given there are data in the database", () => {
+    it("GET /api/users responds with 200 and all of the users", () => {
+      return supertest(app).get("/api/users").expect(200);
     });
 
-    it("GET /api/users responds with 200 and all of the users", () => {
-      return supertest(app).get("/api/users").expect(200, testUsers);
+    it("GET /api/shoes responds with 200 and all of the shoes", () => {
+      return supertest(app).get("/api/shoes").expect(200);
+    });
+
+    it("GET /api/wishlist responds with 200 and all wishlist", () => {
+      return supertest(app).get("/api/wishlist").expect(200);
     });
   });
 });
