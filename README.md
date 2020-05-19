@@ -1,6 +1,8 @@
 App Name: Shu-game
 Live Link: https://shugame-app.now.sh/
 
+This api database holds information for the client side of this application.  The database holds information such as shoes, users, and wishlist items.  This database consist of three tables: users, shoes, and wishlist that all have a relationship with one another though user_id.  
+
 API Documentation:
 
 #usersRouter
@@ -32,3 +34,8 @@ getAllWish(get) | /api/wishlist | Gets all the items in wishlist
 insertWish(post) | /api/wishlist | Create/Add a wishlist item
 getById(get) | /api/wishlist/:wishlist_id | Get a wishlist item by the id
 updateWish(patch) | /api/wishlist/:wishlist_id | update wihslist item information
+
+![ScreenShot](screenshot.png)
+
+
+Technologies Used: PostgresSQL, SQL, Node, Javascript 
