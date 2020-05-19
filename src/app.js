@@ -32,15 +32,6 @@ app.get("/api/wishlist", wishRouter);
 app.post("/api/wishlist", wishRouter);
 app.get("/api/wishlist/:wishlist_id", wishRouter);
 
-// app.get("/api/users", (req, res, next) => {
-//   const knexInstance = req.app.get("db");
-//   UsersService.getAllUsers(knexInstance)
-//     .then((users) => {
-//       res.json(users);
-//     })
-//     .catch(next);
-// });
-
 app.get("/", (req, res) => {
   res.send("Hello, world!");
 });
