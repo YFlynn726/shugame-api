@@ -38,4 +38,4 @@ updateWish(patch) | /api/wishlist/:wishlist_id | update wihslist item informatio
 ![ScreenShot](screenshot.png)
 
 
-Technologies Used: PostgresSQL, SQL, Node, Javascript 
+Technologies Used: PostgresSQL, SQL, Node, Javascript, Express, Mocha and Chai 
