@@ -5,14 +5,12 @@ This api database holds information for the client side of this application.  Th
 
 API Documentation:
 
-#usersRouter
-Method | HTTP request |Description
-
----
-
-getAllUsers(get) | /api/users | Gets all the users
-insertUser(post) | /api/users | Create a new user
-getById(get) | /api/users/:id | Get a user by the id
+### usersRouter
+| Method | HTTP request | Description |
+|--------|:------------:|------------:|
+| getAllUsers(get) | /api/users | Gets all the users |
+| insertUser(post) | /api/users | Create a new user |
+| getById(get) | /api/users/:id | Get a user by the id |
 
 #shoesRouter
 Method | HTTP request | Description
